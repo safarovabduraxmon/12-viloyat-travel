@@ -1,0 +1,1999 @@
+<!DOCTYPE html>
+<html lang="uz">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>12 VILOYAT — O‘zbekistonni birga kashf qilamiz</title>
+
+    <meta
+      name="description"
+      content="25 kunlik O‘zbekiston bo‘ylab 12 viloyat sayohati. Yangi joylar, tarix, milliy taomlar va yangi do‘stlar."
+    />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Playfair+Display:wght@500;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <style>
+      :root {
+        --bg: #07090d;
+        --bg2: #0c1017;
+        --card: #111722;
+        --card2: #151c27;
+        --gold: #d9b56d;
+        --gold2: #f0d89d;
+        --white: #f7f4ed;
+        --muted: #9da5b2;
+        --line: rgba(255, 255, 255, 0.09);
+        --green: #45d483;
+        --shadow: 0 25px 70px rgba(0, 0, 0, 0.45);
+      }
+
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      html {
+        scroll-behavior: smooth;
+      }
+
+      body {
+        background: radial-gradient(
+            circle at 20% 10%,
+            rgba(217, 181, 109, 0.08),
+            transparent 28%
+          ),
+          radial-gradient(
+            circle at 90% 30%,
+            rgba(72, 103, 145, 0.1),
+            transparent 30%
+          ),
+          var(--bg);
+        color: var(--white);
+        font-family: "DM Sans", sans-serif;
+        overflow-x: hidden;
+      }
+
+      body.modal-open {
+        overflow: hidden;
+      }
+
+      a {
+        color: inherit;
+        text-decoration: none;
+      }
+
+      button,
+      input,
+      select {
+        font-family: inherit;
+      }
+
+      button {
+        cursor: pointer;
+      }
+
+      .container {
+        width: min(1180px, 92%);
+        margin: auto;
+      }
+
+      /* NAVBAR */
+
+      .navbar {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        z-index: 1000;
+        padding: 20px 0;
+        background: rgba(7, 9, 13, 0.68);
+        backdrop-filter: blur(18px);
+        border-bottom: 1px solid transparent;
+        transition: 0.3s;
+      }
+
+      .navbar.scrolled {
+        padding: 13px 0;
+        background: rgba(7, 9, 13, 0.94);
+        border-bottom-color: var(--line);
+      }
+
+      .nav-inner {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+
+      .logo {
+        display: flex;
+        align-items: center;
+        gap: 11px;
+        font-weight: 800;
+        letter-spacing: 2px;
+      }
+
+      .logo-mark {
+        width: 38px;
+        height: 38px;
+        border: 1px solid var(--gold);
+        border-radius: 50%;
+        display: grid;
+        place-items: center;
+        color: var(--gold);
+        font-family: "Playfair Display";
+      }
+
+      .logo small {
+        display: block;
+        font-size: 8px;
+        letter-spacing: 2px;
+        color: var(--muted);
+        margin-top: 2px;
+      }
+
+      .nav-links {
+        display: flex;
+        gap: 28px;
+        align-items: center;
+      }
+
+      .nav-links a {
+        font-size: 13px;
+        color: #cbd0d8;
+        transition: 0.25s;
+      }
+
+      .nav-links a:hover {
+        color: var(--gold2);
+      }
+
+      .nav-btn {
+        background: linear-gradient(135deg, var(--gold), #a77a35);
+        color: #0a0b0d;
+        padding: 11px 18px;
+        border-radius: 30px;
+        font-size: 12px;
+        font-weight: 800;
+        border: 0;
+      }
+
+      .menu {
+        display: none;
+        font-size: 27px;
+      }
+
+      /* HERO */
+
+      .hero {
+        min-height: 100vh;
+        display: flex;
+        align-items: center;
+        position: relative;
+        overflow: hidden;
+        background: linear-gradient(
+            90deg,
+            rgba(7, 9, 13, 0.96),
+            rgba(7, 9, 13, 0.74) 45%,
+            rgba(7, 9, 13, 0.58)
+          ),
+          url("images/samarqand.jpg") center/cover;
+      }
+
+      .hero:after {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background: linear-gradient(180deg, transparent 65%, var(--bg));
+        pointer-events: none;
+      }
+
+      .hero-content {
+        position: relative;
+        z-index: 2;
+        padding-top: 80px;
+        max-width: 850px;
+      }
+
+      .badge {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        border: 1px solid rgba(217, 181, 109, 0.35);
+        background: rgba(217, 181, 109, 0.08);
+        color: var(--gold2);
+        border-radius: 50px;
+        padding: 8px 14px;
+        font-size: 11px;
+        letter-spacing: 1.3px;
+        text-transform: uppercase;
+      }
+
+      .badge-dot {
+        width: 7px;
+        height: 7px;
+        background: var(--green);
+        border-radius: 50%;
+        box-shadow: 0 0 12px var(--green);
+      }
+
+      .hero h1 {
+        margin-top: 25px;
+        font-family: "Playfair Display", serif;
+        font-size: clamp(54px, 8vw, 104px);
+        line-height: 0.91;
+        letter-spacing: -4px;
+      }
+
+      .hero h1 span {
+        color: var(--gold2);
+      }
+
+      .hero-sub {
+        margin-top: 27px;
+        max-width: 650px;
+        color: #c3c8d0;
+        font-size: 17px;
+        line-height: 1.8;
+      }
+
+      .hero-actions {
+        display: flex;
+        gap: 13px;
+        margin-top: 35px;
+        flex-wrap: wrap;
+      }
+
+      .primary-btn {
+        border: 0;
+        padding: 16px 24px;
+        border-radius: 40px;
+        font-weight: 800;
+        font-size: 13px;
+        color: #08090b;
+        background: linear-gradient(135deg, var(--gold2), var(--gold));
+        box-shadow: 0 15px 35px rgba(217, 181, 109, 0.18);
+        transition: 0.25s;
+      }
+
+      .primary-btn:hover {
+        transform: translateY(-3px);
+      }
+
+      .secondary-btn {
+        padding: 15px 23px;
+        border-radius: 40px;
+        border: 1px solid rgba(255, 255, 255, 0.17);
+        background: rgba(255, 255, 255, 0.05);
+        backdrop-filter: blur(10px);
+        color: white;
+        font-weight: 700;
+      }
+
+      .hero-stats {
+        margin-top: 60px;
+        display: flex;
+        gap: 45px;
+        flex-wrap: wrap;
+      }
+
+      .stat strong {
+        display: block;
+        font-family: "Playfair Display";
+        color: var(--gold2);
+        font-size: 28px;
+      }
+
+      .stat span {
+        color: var(--muted);
+        font-size: 11px;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+      }
+
+      /* AVAILABILITY */
+
+      .availability {
+        position: relative;
+        z-index: 5;
+        margin-top: -55px;
+      }
+
+      .availability-box {
+        background: rgba(16, 22, 31, 0.94);
+        border: 1px solid var(--line);
+        border-radius: 20px;
+        padding: 22px 25px;
+        box-shadow: var(--shadow);
+        backdrop-filter: blur(20px);
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr auto;
+        gap: 20px;
+        align-items: center;
+      }
+
+      .availability-title {
+        display: flex;
+        gap: 12px;
+        align-items: center;
+      }
+
+      .live {
+        width: 10px;
+        height: 10px;
+        background: var(--green);
+        border-radius: 50%;
+        box-shadow: 0 0 15px var(--green);
+      }
+
+      .availability-title strong {
+        font-size: 14px;
+      }
+
+      .availability-title span {
+        display: block;
+        color: var(--muted);
+        font-size: 11px;
+        margin-top: 3px;
+      }
+
+      .avail-item {
+        padding-left: 20px;
+        border-left: 1px solid var(--line);
+      }
+
+      .avail-item small {
+        color: var(--muted);
+        display: block;
+        font-size: 10px;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+      }
+
+      .avail-item strong {
+        font-size: 19px;
+        color: var(--gold2);
+      }
+
+      .reserve-btn {
+        background: white;
+        color: #08090b;
+        border: 0;
+        padding: 13px 20px;
+        border-radius: 30px;
+        font-weight: 800;
+      }
+
+      /* SECTIONS */
+
+      section {
+        padding: 105px 0;
+      }
+
+      .section-head {
+        max-width: 700px;
+        margin-bottom: 45px;
+      }
+
+      .eyebrow {
+        color: var(--gold);
+        font-size: 11px;
+        font-weight: 800;
+        letter-spacing: 2px;
+        text-transform: uppercase;
+      }
+
+      .section-head h2 {
+        font-family: "Playfair Display";
+        font-size: clamp(38px, 5vw, 62px);
+        line-height: 1;
+        margin-top: 12px;
+      }
+
+      .section-head p {
+        color: var(--muted);
+        line-height: 1.8;
+        margin-top: 18px;
+      }
+
+      /* WHY */
+
+      .why-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 17px;
+      }
+
+      .why-card {
+        padding: 30px;
+        border: 1px solid var(--line);
+        background: linear-gradient(145deg, #111722, #0c1118);
+        border-radius: 20px;
+        transition: 0.3s;
+      }
+
+      .why-card:hover {
+        transform: translateY(-7px);
+        border-color: rgba(217, 181, 109, 0.35);
+      }
+
+      .icon {
+        width: 48px;
+        height: 48px;
+        display: grid;
+        place-items: center;
+        border-radius: 14px;
+        background: rgba(217, 181, 109, 0.1);
+        color: var(--gold2);
+        font-size: 21px;
+      }
+
+      .why-card h3 {
+        margin-top: 22px;
+        font-size: 18px;
+      }
+
+      .why-card p {
+        margin-top: 10px;
+        color: var(--muted);
+        line-height: 1.7;
+        font-size: 13px;
+      }
+
+      /* PROVINCES */
+
+      .province-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 17px;
+      }
+
+      .province-card {
+        min-height: 380px;
+        border-radius: 22px;
+        overflow: hidden;
+        position: relative;
+        cursor: pointer;
+        border: 1px solid var(--line);
+        background-size: cover;
+        background-position: center;
+        transition: 0.35s;
+      }
+
+      .province-card:hover {
+        transform: translateY(-8px) scale(1.01);
+        border-color: rgba(217, 181, 109, 0.5);
+      }
+
+      .province-card:after {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background: linear-gradient(
+          180deg,
+          transparent 15%,
+          rgba(5, 7, 10, 0.9) 90%
+        );
+      }
+
+      .province-content {
+        position: absolute;
+        z-index: 2;
+        bottom: 24px;
+        left: 23px;
+        right: 23px;
+      }
+
+      .province-number {
+        color: var(--gold);
+        font-size: 11px;
+        font-weight: 800;
+        letter-spacing: 2px;
+      }
+
+      .province-content h3 {
+        font-family: "Playfair Display";
+        font-size: 30px;
+        margin-top: 5px;
+      }
+
+      .province-content p {
+        color: #c1c7cf;
+        font-size: 12px;
+        margin-top: 6px;
+      }
+
+      .explore {
+        display: inline-block;
+        margin-top: 16px;
+        color: var(--gold2);
+        font-size: 11px;
+        font-weight: 800;
+        letter-spacing: 1px;
+      }
+
+      /* ROUTE */
+
+      .route {
+        position: relative;
+      }
+
+      .route:before {
+        content: "";
+        position: absolute;
+        left: 20px;
+        top: 10px;
+        bottom: 10px;
+        width: 1px;
+        background: linear-gradient(var(--gold), transparent);
+      }
+
+      .route-item {
+        display: grid;
+        grid-template-columns: 50px 1fr auto;
+        gap: 22px;
+        align-items: center;
+        position: relative;
+        padding: 17px 0;
+      }
+
+      .route-dot {
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        background: #0b1016;
+        border: 1px solid var(--gold);
+        color: var(--gold2);
+        display: grid;
+        place-items: center;
+        font-size: 11px;
+        z-index: 2;
+      }
+
+      .route-item h3 {
+        font-size: 15px;
+      }
+
+      .route-item p {
+        color: var(--muted);
+        font-size: 12px;
+        margin-top: 4px;
+      }
+
+      .route-days {
+        color: var(--gold2);
+        font-size: 12px;
+      }
+
+      /* PROGRAM */
+
+      .program {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 20px;
+      }
+
+      .day-card {
+        padding: 27px;
+        border: 1px solid var(--line);
+        border-radius: 18px;
+        background: var(--card);
+      }
+
+      .day-card-top {
+        display: flex;
+        justify-content: space-between;
+        gap: 20px;
+      }
+
+      .day-card .day {
+        color: var(--gold);
+        font-size: 11px;
+        letter-spacing: 1.5px;
+        font-weight: 800;
+      }
+
+      .day-card h3 {
+        margin-top: 8px;
+        font-family: "Playfair Display";
+        font-size: 24px;
+      }
+
+      .day-card p {
+        margin-top: 10px;
+        color: var(--muted);
+        font-size: 13px;
+        line-height: 1.7;
+      }
+
+      .day-time {
+        white-space: nowrap;
+        color: #d7dce4;
+        font-size: 12px;
+      }
+
+      /* PRICE */
+
+      .price-wrap {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 20px;
+      }
+
+      .price-card {
+        border: 1px solid rgba(217, 181, 109, 0.3);
+        background: radial-gradient(
+            circle at top right,
+            rgba(217, 181, 109, 0.1),
+            transparent 35%
+          ),
+          var(--card);
+        border-radius: 25px;
+        padding: 38px;
+      }
+
+      .price-card h3 {
+        font-family: "Playfair Display";
+        font-size: 32px;
+      }
+
+      .price {
+        margin-top: 20px;
+        font-size: 42px;
+        font-weight: 800;
+        color: var(--gold2);
+      }
+
+      .price span {
+        font-size: 12px;
+        color: var(--muted);
+        font-weight: 400;
+      }
+
+      .includes {
+        margin-top: 28px;
+        display: grid;
+        gap: 13px;
+      }
+
+      .includes div {
+        color: #cdd2da;
+        font-size: 13px;
+      }
+
+      .price-note {
+        color: var(--muted);
+        font-size: 11px;
+        line-height: 1.7;
+        margin-top: 25px;
+      }
+
+      /* SAFETY */
+
+      .safety-grid {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 15px;
+      }
+
+      .safety-card {
+        padding: 25px;
+        border-radius: 18px;
+        background: #101620;
+        border: 1px solid var(--line);
+      }
+
+      .safety-card strong {
+        display: block;
+        margin-top: 14px;
+        font-size: 14px;
+      }
+
+      .safety-card p {
+        color: var(--muted);
+        font-size: 12px;
+        line-height: 1.6;
+        margin-top: 8px;
+      }
+
+      /* CTA */
+
+      .cta {
+        margin-top: 20px;
+        border-radius: 28px;
+        overflow: hidden;
+        position: relative;
+        padding: 75px 50px;
+        background: linear-gradient(
+            90deg,
+            rgba(8, 10, 13, 0.94),
+            rgba(8, 10, 13, 0.45)
+          ),
+          url("images/buxoro.jpg") center/cover;
+        border: 1px solid var(--line);
+      }
+
+      .cta h2 {
+        font-family: "Playfair Display";
+        font-size: clamp(40px, 6vw, 70px);
+        max-width: 700px;
+      }
+
+      .cta p {
+        color: #c5cad1;
+        max-width: 600px;
+        line-height: 1.7;
+        margin-top: 16px;
+      }
+
+      /* FOOTER */
+
+      footer {
+        padding: 50px 0 30px;
+        border-top: 1px solid var(--line);
+      }
+
+      .footer-inner {
+        display: flex;
+        justify-content: space-between;
+        gap: 30px;
+      }
+
+      .footer-brand {
+        max-width: 350px;
+      }
+
+      .footer-brand p {
+        color: var(--muted);
+        line-height: 1.7;
+        font-size: 12px;
+        margin-top: 12px;
+      }
+
+      .footer-links {
+        display: flex;
+        gap: 20px;
+        color: var(--muted);
+        font-size: 12px;
+      }
+
+      .copyright {
+        color: #626975;
+        font-size: 11px;
+        margin-top: 35px;
+        padding-top: 20px;
+        border-top: 1px solid var(--line);
+      }
+
+      /* MODAL */
+
+      .modal {
+        position: fixed;
+        inset: 0;
+        z-index: 2000;
+        background: rgba(0, 0, 0, 0.78);
+        backdrop-filter: blur(14px);
+        display: none;
+        align-items: center;
+        justify-content: center;
+        padding: 20px;
+      }
+
+      .modal.active {
+        display: flex;
+      }
+
+      .modal-box {
+        width: min(580px, 100%);
+        max-height: 92vh;
+        overflow: auto;
+        background: radial-gradient(
+            circle at top right,
+            rgba(217, 181, 109, 0.08),
+            transparent 35%
+          ),
+          #0d131c;
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        border-radius: 25px;
+        box-shadow: 0 40px 100px rgba(0, 0, 0, 0.65);
+        padding: 32px;
+        position: relative;
+      }
+
+      .close {
+        position: absolute;
+        top: 18px;
+        right: 20px;
+        width: 35px;
+        height: 35px;
+        border-radius: 50%;
+        border: 1px solid var(--line);
+        background: #121923;
+        color: white;
+        cursor: pointer;
+        font-size: 18px;
+        z-index: 5;
+      }
+
+      .modal-title {
+        font-family: "Playfair Display";
+        font-size: 34px;
+        margin-bottom: 7px;
+      }
+
+      .modal-sub {
+        color: var(--muted);
+        font-size: 12px;
+        line-height: 1.6;
+        margin-bottom: 25px;
+      }
+
+      .form-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 13px;
+      }
+
+      .form-group {
+        display: flex;
+        flex-direction: column;
+        gap: 7px;
+      }
+
+      .form-group.full {
+        grid-column: 1/-1;
+      }
+
+      .form-group label {
+        color: #aeb5c0;
+        font-size: 10px;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+      }
+
+      .form-group input,
+      .form-group select {
+        width: 100%;
+        padding: 14px;
+        background: #101721;
+        border: 1px solid var(--line);
+        border-radius: 12px;
+        color: white;
+        outline: none;
+      }
+
+      .form-group input:focus,
+      .form-group select:focus {
+        border-color: rgba(217, 181, 109, 0.5);
+      }
+
+      .people-counter {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        background: #101721;
+        border: 1px solid var(--line);
+        border-radius: 12px;
+        padding: 10px 12px;
+      }
+
+      .counter-buttons {
+        display: flex;
+        gap: 8px;
+        align-items: center;
+      }
+
+      .counter-buttons button {
+        width: 32px;
+        height: 32px;
+        border-radius: 50%;
+        border: 1px solid var(--line);
+        background: #171f2a;
+        color: white;
+      }
+
+      .counter-buttons strong {
+        width: 25px;
+        text-align: center;
+      }
+
+      .total {
+        margin-top: 20px;
+        padding: 17px;
+        border-radius: 15px;
+        background: rgba(217, 181, 109, 0.08);
+        border: 1px solid rgba(217, 181, 109, 0.2);
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+
+      .total span {
+        color: var(--muted);
+        font-size: 11px;
+      }
+
+      .total strong {
+        color: var(--gold2);
+        font-size: 23px;
+      }
+
+      .submit,
+      .telegram {
+        width: 100%;
+        margin-top: 15px;
+        padding: 15px;
+        border-radius: 13px;
+        font-weight: 900;
+      }
+
+      .submit {
+        border: 0;
+        background: linear-gradient(135deg, var(--gold2), var(--gold));
+        color: #08090b;
+      }
+
+      .telegram {
+        margin-top: 10px;
+        border: 1px solid rgba(80, 170, 255, 0.25);
+        background: rgba(80, 170, 255, 0.08);
+        color: #8bc9ff;
+      }
+
+      /* DETAIL */
+
+      .detail-modal .modal-box {
+        width: min(850px, 100%);
+      }
+
+      .detail-hero {
+        height: 270px;
+        border-radius: 17px;
+        background-size: cover;
+        background-position: center;
+        position: relative;
+        overflow: hidden;
+        display: flex;
+        align-items: flex-end;
+      }
+
+      .detail-hero:after {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background: linear-gradient(transparent, rgba(0, 0, 0, 0.85));
+      }
+
+      .detail-hero-content {
+        position: relative;
+        z-index: 2;
+        padding: 25px;
+      }
+
+      .detail-hero-content small {
+        color: var(--gold2);
+      }
+
+      .detail-hero-content h2 {
+        font-family: "Playfair Display";
+        font-size: 42px;
+      }
+
+      .detail-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 14px;
+        margin-top: 18px;
+      }
+
+      .detail-card {
+        padding: 20px;
+        border: 1px solid var(--line);
+        border-radius: 15px;
+        background: #101620;
+      }
+
+      .detail-card h4 {
+        color: var(--gold2);
+        font-size: 13px;
+        margin-bottom: 9px;
+      }
+
+      .detail-card p,
+      .detail-card li {
+        color: #aeb5c0;
+        font-size: 12px;
+        line-height: 1.7;
+      }
+
+      .detail-card ul {
+        padding-left: 17px;
+      }
+
+      /* SUCCESS */
+
+      .success {
+        text-align: center;
+        padding: 30px 10px;
+      }
+
+      .success-icon {
+        width: 70px;
+        height: 70px;
+        margin: auto;
+        border-radius: 50%;
+        display: grid;
+        place-items: center;
+        background: rgba(69, 212, 131, 0.12);
+        border: 1px solid rgba(69, 212, 131, 0.35);
+        color: var(--green);
+        font-size: 30px;
+      }
+
+      .success h3 {
+        font-family: "Playfair Display";
+        font-size: 30px;
+        margin-top: 18px;
+      }
+
+      .success p {
+        color: var(--muted);
+        margin-top: 10px;
+        line-height: 1.7;
+        font-size: 13px;
+      }
+
+      /* RESPONSIVE */
+
+      @media (max-width: 900px) {
+        .nav-links {
+          display: none;
+        }
+
+        .menu {
+          display: block;
+        }
+
+        .availability-box {
+          grid-template-columns: 1fr 1fr;
+        }
+
+        .why-grid,
+        .province-grid {
+          grid-template-columns: 1fr 1fr;
+        }
+
+        .safety-grid {
+          grid-template-columns: 1fr 1fr;
+        }
+
+        .price-wrap,
+        .program {
+          grid-template-columns: 1fr;
+        }
+      }
+
+      @media (max-width: 650px) {
+        section {
+          padding: 75px 0;
+        }
+
+        .hero {
+          min-height: 850px;
+        }
+
+        .hero h1 {
+          font-size: 55px;
+          letter-spacing: -2px;
+        }
+
+        .hero-sub {
+          font-size: 14px;
+        }
+
+        .hero-stats {
+          gap: 22px;
+          margin-top: 40px;
+        }
+
+        .availability {
+          margin-top: -30px;
+        }
+
+        .availability-box {
+          grid-template-columns: 1fr;
+        }
+
+        .avail-item {
+          border-left: 0;
+          border-top: 1px solid var(--line);
+          padding: 13px 0 0;
+        }
+
+        .why-grid,
+        .province-grid,
+        .safety-grid {
+          grid-template-columns: 1fr;
+        }
+
+        .province-card {
+          min-height: 350px;
+        }
+
+        .route-item {
+          grid-template-columns: 45px 1fr;
+        }
+
+        .route-days {
+          grid-column: 2;
+        }
+
+        .price-card {
+          padding: 25px;
+        }
+
+        .price {
+          font-size: 34px;
+        }
+
+        .cta {
+          padding: 45px 25px;
+        }
+
+        .footer-inner {
+          flex-direction: column;
+        }
+
+        .footer-links {
+          flex-wrap: wrap;
+        }
+
+        .form-grid {
+          grid-template-columns: 1fr;
+        }
+
+        .form-group.full {
+          grid-column: auto;
+        }
+
+        .modal-box {
+          padding: 24px;
+        }
+
+        .detail-grid {
+          grid-template-columns: 1fr;
+        }
+
+        .detail-hero {
+          height: 220px;
+        }
+      }
+
+      /* REGION IMAGE GRID */
+
+      .image-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 17px;
+        margin-top: 10px;
+        margin-bottom: 40px;
+      }
+
+      .image-card {
+        position: relative;
+        height: 240px;
+        overflow: hidden;
+        border-radius: 22px;
+        border: 1px solid var(--line);
+        background: var(--card);
+        box-shadow: 0 20px 50px rgba(0, 0, 0, 0.35);
+        transition: 0.35s;
+      }
+
+      .image-card:hover {
+        transform: translateY(-7px);
+        border-color: rgba(217, 181, 109, 0.5);
+      }
+
+      .image-card img {
+        width: 100%;
+        height: 100%;
+        display: block;
+        object-fit: cover;
+        transition: 0.45s;
+      }
+
+      .image-card:hover img {
+        transform: scale(1.05);
+      }
+
+      .image-card::after {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background: linear-gradient(
+          180deg,
+          transparent 35%,
+          rgba(5, 7, 10, 0.82) 100%
+        );
+        pointer-events: none;
+      }
+
+      .image-label {
+        position: absolute;
+        z-index: 2;
+        left: 18px;
+        bottom: 16px;
+        color: white;
+        font-family: "Playfair Display", serif;
+        font-size: 22px;
+        font-weight: 600;
+      }
+
+      /* TABLET */
+
+      @media (max-width: 900px) {
+        .image-grid {
+          grid-template-columns: repeat(2, 1fr);
+        }
+      }
+
+      /* TELEFON */
+
+      @media (max-width: 650px) {
+        .image-grid {
+          grid-template-columns: 1fr;
+        }
+
+        .image-card {
+          height: 260px;
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <header class="navbar" id="navbar">
+      <div class="container nav-inner">
+        <a href="#home" class="logo">
+          <div class="logo-mark">12</div>
+
+          <div>
+            12 VILOYAT
+            <small>TRAVEL COMMUNITY</small>
+          </div>
+        </a>
+
+        <nav class="nav-links">
+          <a href="#about">Loyiha</a>
+          <a href="#regions">Viloyatlar</a>
+          <a href="#route">Marshrut</a>
+          <a href="#price">Narx</a>
+          <a href="#faq">FAQ</a>
+
+          <button class="nav-btn" onclick="openBooking()">
+            Ro‘yxatdan o‘tish
+          </button>
+        </nav>
+
+        <div class="menu" onclick="toggleMenu()">☰</div>
+      </div>
+    </header>
+
+    <main>
+      <!-- HERO -->
+
+      <section class="hero" id="home">
+        <div class="container hero-content">
+          <div class="badge">
+            <span class="badge-dot"></span>
+            YANGI GURUH — QABUL OCHIQ
+          </div>
+
+          <h1>
+            12 viloyat.<br />
+            <span>1 katta</span> safar.
+          </h1>
+
+          <p class="hero-sub">
+            25 kun davomida O‘zbekistonning 12 viloyatini birga kashf qilamiz.
+            Tarixiy obidalar, milliy taomlar, tabiat, yangi tajribalar va eng
+            muhimi — yangi insonlar bilan unutilmas safar.
+          </p>
+
+          <div class="hero-actions">
+            <button class="primary-btn" onclick="openBooking()">
+              Safarga qo‘shilish →
+            </button>
+
+            <a href="#regions" class="secondary-btn"> Marshrutni ko‘rish </a>
+          </div>
+
+          <div class="hero-stats">
+            <div class="stat">
+              <strong>25</strong>
+              <span>kun</span>
+            </div>
+
+            <div class="stat">
+              <strong>12</strong>
+              <span>viloyat</span>
+            </div>
+
+            <div class="stat">
+              <strong>25</strong>
+              <span>ishtirokchi</span>
+            </div>
+
+            <div class="stat">
+              <strong>1</strong>
+              <span>katta jamoa</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- AVAILABILITY -->
+
+      <div class="availability">
+        <div class="container">
+          <div class="availability-box">
+            <div class="availability-title">
+              <div class="live"></div>
+
+              <div>
+                <strong>Ro‘yxatdan o‘tish davom etmoqda</strong>
+                <span>Keyingi guruh uchun joylar</span>
+              </div>
+            </div>
+
+            <div class="avail-item">
+              <small>Jami o‘rin</small>
+              <strong>25 ta</strong>
+            </div>
+
+            <div class="avail-item">
+              <small>Qolgan o‘rin</small>
+              <strong id="remainingSeats">17 ta</strong>
+            </div>
+
+            <button class="reserve-btn" onclick="openBooking()">
+              Joy band qilish
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- ABOUT -->
+
+      <section id="about">
+        <div class="container">
+          <div class="section-head">
+            <div class="eyebrow">01 — LOYIHA</div>
+
+            <h2>Bu oddiy ekskursiya emas.</h2>
+
+            <p>
+              Bu — O‘zbekiston bo‘ylab birgalikda sayohat qiladigan kichik
+              travel community. Biz faqat joylarni ko‘rmaymiz — safarning o‘zini
+              xotiraga aylantiramiz.
+            </p>
+          </div>
+
+          <div class="why-grid">
+            <div class="why-card">
+              <div class="icon">🏛</div>
+              <h3>Tarix</h3>
+              <p>
+                Samarqand, Buxoro, Xiva, Shahrisabz, Termiz va boshqa tarixiy
+                maskanlarni bir marshrutda ko‘ramiz.
+              </p>
+            </div>
+
+            <div class="why-card">
+              <div class="icon">🍽</div>
+              <h3>Milliy taomlar</h3>
+              <p>
+                Har bir hududning o‘ziga xos taomi, bozori, hunarmandchiligi va
+                mahalliy madaniyatini his qilamiz.
+              </p>
+            </div>
+
+            <div class="why-card">
+              <div class="icon">🤝</div>
+              <h3>Yangi do‘stlar</h3>
+              <p>
+                Turli joylardan kelgan ishtirokchilar bir jamoaga aylanadi.
+                Safar tugagandan keyin ham community davom etadi.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- REGIONS -->
+
+      <section id="regions">
+        <div class="container">
+          <div class="section-head">
+            <div class="eyebrow">02 — 12 VILOYAT</div>
+
+            <h2>Har bir viloyat — boshqa bir hikoya.</h2>
+
+            <p>
+              O‘zbekistonning 12 viloyatini bitta katta safarga birlashtiramiz.
+              Har bir hududni bosib, batafsil ma’lumotni ko‘rish mumkin.
+            </p>
+          </div>
+
+          <div class="image-grid">
+
+            <div class="image-card">
+              <img src="img/samarqand.jpg" alt="Samarqand" />
+              <div class="image-label">Samarqand</div>
+            </div>
+          
+            <div class="image-card">
+              <img src="img/andijon.jpg" alt="Andijon" />
+              <div class="image-label">Andijon</div>
+            </div>
+          
+            <div class="image-card">
+              <img src="img/buxoro.jpg" alt="Buxoro" />
+              <div class="image-label">Buxoro</div>
+            </div>
+          
+            <div class="image-card">
+              <img src="img/fargona.jpg" alt="Farg‘ona" />
+              <div class="image-label">Farg‘ona</div>
+            </div>
+          
+            <div class="image-card">
+              <img src="img/jizzax.jpg" alt="Jizzax" />
+              <div class="image-label">Jizzax</div>
+            </div>
+          
+            <div class="image-card">
+              <img src="img/namangan.jpg" alt="Namangan" />
+              <div class="image-label">Namangan</div>
+            </div>
+          
+            <div class="image-card">
+              <img src="img/navoiy.jpg" alt="Navoiy" />
+              <div class="image-label">Navoiy</div>
+            </div>
+          
+            <div class="image-card">
+              <img src="img/qashqadaryo.jpg" alt="Qashqadaryo" />
+              <div class="image-label">Qashqadaryo</div>
+            </div>
+          
+            <div class="image-card">
+              <img src="img/sirdaryo.jpg" alt="Sirdaryo" />
+              <div class="image-label">Sirdaryo</div>
+            </div>
+          
+            <div class="image-card">
+              <img src="img/surxondaryo.jpg" alt="Surxondaryo" />
+              <div class="image-label">Surxondaryo</div>
+            </div>
+          
+            <div class="image-card">
+              <img src="img/toshkent.jpg" alt="Toshkent" />
+              <div class="image-label">Toshkent</div>
+            </div>
+          
+            <div class="image-card">
+              <img src="img/xorazm.webp" alt="Xorazm" />
+              <div class="image-label">Xorazm</div>
+            </div>
+          
+          </div>
+          
+          <div class="province-grid" id="provinceGrid"></div>
+
+      <!-- ROUTE -->
+
+      <section id="route">
+        <div class="container">
+          <div class="section-head">
+            <div class="eyebrow">03 — MARSHRUT</div>
+
+            <h2>25 kunlik katta yo‘l.</h2>
+
+            <p>
+              Marshrutning asosiy g‘oyasi — hududlarni ketma-ket kashf qilish,
+              Buxoroni esa safarning final nuqtasiga aylantirish.
+            </p>
+          </div>
+
+          <div class="route" id="routeList"></div>
+        </div>
+      </section>
+
+      <!-- PROGRAM -->
+
+      <section>
+        <div class="container">
+          <div class="section-head">
+            <div class="eyebrow">04 — KUN TARTIBI</div>
+
+            <h2>Safar qanday o‘tadi?</h2>
+
+            <p>
+              Har kuni tarix, sayr, ovqatlanish va jamoaviy vaqt o‘rtasida
+              muvozanat saqlanadi.
+            </p>
+          </div>
+
+          <div class="program">
+            <div class="day-card">
+              <div class="day-card-top">
+                <div>
+                  <div class="day">01–02 KUN</div>
+                  <h3>Toshkent</h3>
+                </div>
+                <div class="day-time">2 kun</div>
+              </div>
+              <p>
+                Shahar va tog‘ oldi hududlari. Sayr, tanishuv va guruh bilan
+                dastlabki kunlar.
+              </p>
+            </div>
+
+            <div class="day-card">
+              <div class="day-card-top">
+                <div>
+                  <div class="day">03 KUN</div>
+                  <h3>Sirdaryo</h3>
+                </div>
+                <div class="day-time">1 kun</div>
+              </div>
+              <p>Hudud bilan tanishuv, mahalliy hayot va qisqa sayohat.</p>
+            </div>
+
+            <div class="day-card">
+              <div class="day-card-top">
+                <div>
+                  <div class="day">04 KUN</div>
+                  <h3>Jizzax</h3>
+                </div>
+                <div class="day-time">1 kun</div>
+              </div>
+              <p>Tabiat, tarixiy joylar va mahalliy gastronomiya.</p>
+            </div>
+
+            <div class="day-card">
+              <div class="day-card-top">
+                <div>
+                  <div class="day">05–07 KUN</div>
+                  <h3>Samarqand</h3>
+                </div>
+                <div class="day-time">3 kun</div>
+              </div>
+              <p>Registon, Shohi Zinda, Guri Amir, Bibi Xonim va Afrosiyob.</p>
+            </div>
+
+            <div class="day-card">
+              <div class="day-card-top">
+                <div>
+                  <div class="day">08–09 KUN</div>
+                  <h3>Qashqadaryo</h3>
+                </div>
+                <div class="day-time">2 kun</div>
+              </div>
+              <p>Shahrisabz va Amir Temur merosi bilan tanishuv.</p>
+            </div>
+
+            <div class="day-card">
+              <div class="day-card-top">
+                <div>
+                  <div class="day">10–11 KUN</div>
+                  <h3>Surxondaryo</h3>
+                </div>
+                <div class="day-time">2 kun</div>
+              </div>
+              <p>Termiz va qadimiy sivilizatsiyalar izlari.</p>
+            </div>
+
+            <div class="day-card">
+              <div class="day-card-top">
+                <div>
+                  <div class="day">12–14 KUN</div>
+                  <h3>Farg‘ona vodiysi</h3>
+                </div>
+                <div class="day-time">3 kun</div>
+              </div>
+              <p>
+                Farg‘ona, Andijon va Namangan — hunarmandchilik, shaharlar va
+                mahalliy madaniyat.
+              </p>
+            </div>
+
+            <div class="day-card">
+              <div class="day-card-top">
+                <div>
+                  <div class="day">15–17 KUN</div>
+                  <h3>Navoiy</h3>
+                </div>
+                <div class="day-time">3 kun</div>
+              </div>
+              <p>
+                Cho‘l manzaralari, tarixiy obidalar va yo‘l bo‘yi tajribalar.
+              </p>
+            </div>
+
+            <div class="day-card">
+              <div class="day-card-top">
+                <div>
+                  <div class="day">18–20 KUN</div>
+                  <h3>Xorazm</h3>
+                </div>
+                <div class="day-time">3 kun</div>
+              </div>
+              <p>Xiva, Ichan-Qal’a va qadimiy Xorazm atmosferasi.</p>
+            </div>
+
+            <div class="day-card">
+              <div class="day-card-top">
+                <div>
+                  <div class="day">21–25 KUN</div>
+                  <h3>Buxoro — FINAL</h3>
+                </div>
+                <div class="day-time">5 kun</div>
+              </div>
+              <p>
+                Safarning katta finali: eski shahar, tarixiy markaz,
+                hunarmandlar va xayrlashuv kechasi.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- PRICE -->
+
+      <section id="price">
+        <div class="container">
+          <div class="section-head">
+            <div class="eyebrow">05 — PAKET</div>
+
+            <h2>Safar narxi.</h2>
+
+            <p>
+              Quyidagi summa hozircha loyiha uchun konseptual narx. Haqiqiy
+              bookinglar va xarajatlar tasdiqlangandan keyin final narx
+              belgilanadi.
+            </p>
+          </div>
+
+          <div class="price-wrap">
+            <div class="price-card">
+              <h3>12 Viloyat Experience</h3>
+
+              <div class="price">
+                8 900 000
+                <span>so‘m / kishi</span>
+              </div>
+
+              <div class="includes">
+                <div>✓ Guruh ichidagi asosiy transport</div>
+                <div>✓ Hostel joylashuvi</div>
+                <div>✓ Marshrut bo‘yicha tashkilotchilik</div>
+                <div>✓ Ekskursiya dasturi</div>
+                <div>✓ Tour leader</div>
+                <div>✓ Ayollar uchun alohida coordinator</div>
+                <div>✓ 12 viloyat bo‘yicha umumiy dastur</div>
+              </div>
+
+              <div class="price-note">
+                * Narx konseptual. Real startup sifatida ishga tushirishdan
+                oldin barcha xarajatlar bo‘yicha alohida smeta tuziladi.
+              </div>
+
+              <button
+                class="primary-btn"
+                style="margin-top: 22px"
+                onclick="openBooking()"
+              >
+                Joy band qilish
+              </button>
+            </div>
+
+            <div class="price-card">
+              <h3>Safarga nima olib borish kerak?</h3>
+
+              <div class="includes">
+                <div>🪪 Pasport yoki ID</div>
+                <div>👟 Qulay oyoq kiyim</div>
+                <div>🎒 Kichik/yengil yuk</div>
+                <div>🔋 Powerbank</div>
+                <div>📱 Telefon va quvvatlagich</div>
+                <div>🧴 Shaxsiy gigiyena vositalari</div>
+                <div>💳 Bank karta + oz miqdorda naqd pul</div>
+                <div>🧥 Mavsumga mos kiyim</div>
+              </div>
+
+              <div class="price-note">
+                Eng muhimi: qulay kiyim, yaxshi kayfiyat va yangi narsalarni
+                kashf qilishga tayyorlik.
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- COMMUNITY -->
+
+      <section>
+        <div class="container">
+          <div class="section-head">
+            <div class="eyebrow">06 — COMMUNITY</div>
+
+            <h2>Jamoa qanday ishlaydi?</h2>
+          </div>
+
+          <div class="safety-grid">
+            <div class="safety-card">
+              <div class="icon">👨‍💼</div>
+              <strong>Tour Leader</strong>
+              <p>Umumiy marshrut, transport va kunlik dastur boshqariladi.</p>
+            </div>
+
+            <div class="safety-card">
+              <div class="icon">👩‍💼</div>
+              <strong>Ayollar koordinatori</strong>
+              <p>Ayol ishtirokchilar bilan aloqa va tashkiliy masalalar.</p>
+            </div>
+
+            <div class="safety-card">
+              <div class="icon">🛏</div>
+              <strong>Alohida xonalar</strong>
+              <p>Ayollar va erkaklar uchun alohida xonalar rejalashtiriladi.</p>
+            </div>
+
+            <div class="safety-card">
+              <div class="icon">🤝</div>
+              <strong>Bir jamoa</strong>
+              <p>
+                Transport, ekskursiya, umumiy tadbirlar va sayrlar birga
+                o‘tkaziladi.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- CTA -->
+
+      <section>
+        <div class="container">
+          <div class="cta">
+            <div class="eyebrow">07 — START</div>
+
+            <h2>O‘zbekistonni boshqacha ko‘rishga tayyormisan?</h2>
+
+            <p>
+              25 kun. 12 viloyat. Yuzlab yangi manzaralar. Balki safarning
+              oxirida eng katta topilmang yangi do‘stlaring bo‘lar.
+            </p>
+
+            <button
+              class="primary-btn"
+              style="margin-top: 25px"
+              onclick="openBooking()"
+            >
+              Ro‘yxatdan o‘tish →
+            </button>
+          </div>
+        </div>
+      </section>
+
+      <!-- FAQ -->
+
+      <section id="faq">
+        <div class="container">
+          <div class="section-head">
+            <div class="eyebrow">08 — FAQ</div>
+            <h2>Ko‘p beriladigan savollar.</h2>
+          </div>
+
+          <div class="program">
+            <div class="day-card">
+              <h3>Aralash guruh bo‘ladimi?</h3>
+              <p>
+                Ha. Loyiha ayollar va erkaklar uchun ochiq. Joylashtirishda
+                xonalar alohida, safar va umumiy dasturlar esa jamoaviy bo‘ladi.
+              </p>
+            </div>
+
+            <div class="day-card">
+              <h3>Guruh nechta odamdan iborat?</h3>
+              <p>
+                Birinchi guruh uchun maksimal 25 ishtirokchi rejalashtirilgan.
+              </p>
+            </div>
+
+            <div class="day-card">
+              <h3>Safar necha kun?</h3>
+              <p>Konsept 25 kunlik marshrutga qurilgan.</p>
+            </div>
+
+            <div class="day-card">
+              <h3>Buxoro nega oxirida?</h3>
+              <p>
+                Buxoroni butun safarning final nuqtasi sifatida qoldirish —
+                loyiha brendining asosiy g‘oyalaridan biri.
+              </p>
+            </div>
+
+            <div class="day-card">
+              <h3>Safarga qanday yozilaman?</h3>
+              <p>
+                “Ro‘yxatdan o‘tish” tugmasini bosib, ism, telefon, odam soni va
+                safar sanasini tanlaysiz.
+              </p>
+            </div>
+
+            <div class="day-card">
+              <h3>Ro‘yxatdan o‘tish pul to‘lash deganimi?</h3>
+              <p>
+                Yo‘q. Ushbu demo versiyada forma faqat lead yig‘ish uchun. Real
+                to‘lov tizimi backend va huquqiy shartlar tasdiqlangandan keyin
+                ulanadi.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- FOOTER -->
+
+    <footer>
+      <div class="container">
+        <div class="footer-inner">
+          <div class="footer-brand">
+            <div class="logo">
+              <div class="logo-mark">12</div>
+
+              <div>
+                12 VILOYAT
+                <small>TRAVEL COMMUNITY</small>
+              </div>
+            </div>
+
+            <p>
+              O‘zbekiston bo‘ylab yangi joylar, yangi tajribalar va yangi
+              do‘stliklarni birlashtiradigan travel community.
+            </p>
+          </div>
+
+          <div class="footer-links">
+            <a href="#about">Loyiha</a>
+            <a href="#regions">Viloyatlar</a>
+            <a href="#price">Narx</a>
+            <a href="#faq">FAQ</a>
+          </div>
+        </div>
+
+        <div class="copyright">© 2026 12 VILOYAT. Demo startup platforma.</div>
+      </div>
+    </footer>
+
+    <!-- BOOKING MODAL -->
+
+    <div class="modal" id="bookingModal">
+      <div class="modal-box">
+        <button class="close" onclick="closeBooking()">×</button>
+
+        <div id="bookingContent">
+          <div class="eyebrow">JOY BAND QILISH</div>
+
+          <h2 class="modal-title">Safarga qo‘shiling.</h2>
+
+          <p class="modal-sub">
+            Ma’lumotlaringizni qoldiring. Tashkilotchi siz bilan bog‘lanib,
+            safar tafsilotlarini tasdiqlaydi.
+          </p>
+
+          <form id="bookingForm">
+            <div class="form-grid">
+              <div class="form-group">
+                <label>Ism</label>
+                <input type="text" id="name" required placeholder="Ismingiz" />
+              </div>
+
+              <div class="form-group">
+                <label>Telefon</label>
+                <input
+                  type="tel"
+                  id="phone"
+                  required
+                  placeholder="+998 90 123 45 67"
+                />
+              </div>
+
+              <div class="form-group">
+                <label>Safar sanasi</label>
+                <input type="date" id="date" required />
+              </div>
+
+              <div class="form-group">
+                <label>Jins</label>
+
+                <select id="gender" required>
+                  <option value="">Tanlang</option>
+                  <option>Erkak</option>
+                  <option>Ayol</option>
+                </select>
+              </div>
+
+              <div class="form-group full">
+                <label>Ishtirokchilar soni</label>
+
+                <div class="people-counter">
+                  <span>Necha kishi?</span>
+
+                  <div class="counter-buttons">
+                    <button type="button" onclick="changePeople(-1)">−</button>
+
+                    <strong id="peopleCount">1</strong>
+
+                    <button type="button" onclick="changePeople(1)">+</button>
+                  </div>
+                </div>
+              </div>
+
+              <div class="form-group full">
+                <label>Izoh</label>
+
+                <input
+                  type="text"
+                  id="note"
+                  placeholder="Masalan: do‘stim bilan kelaman"
+                />
+              </div>
+            </div>
+
+            <div class="total">
+              <div>
+                <span>Taxminiy jami</span>
+              </div>
+
+              <strong id="totalPrice"> 8 900 000 so‘m </strong>
+            </div>
+
+            <button class="submit" type="submit">
+              Ro‘yxatdan o‘tishni yuborish →
+            </button>
+
+            <button type="button" class="telegram" onclick="openTelegram()">
+              ✈ Telegram orqali bog‘lanish
+            </button>
+          </form>
+        </div>
+      </div>
+    </div>
+
+    <!-- REGION DETAIL -->
+
+    <div class="modal detail-modal" id="detailModal">
+      <div class="modal-box">
+        <button class="close" onclick="closeDetail()">×</button>
+
+        <div id="detailContent"></div>
+      </div>
+    </div>
+
+    <!-- MUHIM: JAVASCRIPT ALOHIDA FAYLDAN -->
+    <script src="script.js"></script>
+  </body>
+</html>
