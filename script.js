@@ -17,14 +17,10 @@ const provinces = [
     name: "Toshkent",
     short: "Zamonaviy megapolis",
     days: "2 kun",
-
-    image: "images/toshkent.jpg",
-
+    image: "toshkent.jpg",
     places: ["Toshkent shahri", "Chorvoq", "Ugam–Chotqol hududlari"],
-
     program:
       "Shahar sayri, tarixiy joylar, tanishuv kechasi va tog‘ oldi sayohati.",
-
     time: "09:00–20:00",
   },
 
@@ -32,13 +28,9 @@ const provinces = [
     name: "Sirdaryo",
     short: "Agroturizm o‘lkasi",
     days: "1 kun",
-
-    image: "images/sirdaryo.jpg",
-
+    image: "sirdaryo.jpg",
     places: ["Guliston", "Mahalliy hududlar", "Tabiat maskanlari"],
-
     program: "Hudud bilan tanishuv, mahalliy hayot va guruh sayri.",
-
     time: "09:00–19:00",
   },
 
@@ -46,13 +38,9 @@ const provinces = [
     name: "Jizzax",
     short: "Shifobaxsh tabiat",
     days: "1 kun",
-
-    image: "images/jizzax.jpg",
-
+    image: "jizzax.jpg",
     places: ["Zomin", "Zomin milliy bog‘i", "Tabiat maskanlari"],
-
     program: "Tog‘ oldi tabiati, sayr va mahalliy gastronomiya.",
-
     time: "08:30–20:00",
   },
 
@@ -60,14 +48,16 @@ const provinces = [
     name: "Samarqand",
     short: "Ipak yo‘lining yuragi",
     days: "3 kun",
-
-    image: "images/samarqand.jpg",
-
-    places: ["Registon", "Shohi Zinda", "Guri Amir", "Bibi Xonim", "Afrosiyob"],
-
+    image: "samarqand.jpg",
+    places: [
+      "Registon",
+      "Shohi Zinda",
+      "Guri Amir",
+      "Bibi Xonim",
+      "Afrosiyob",
+    ],
     program:
       "Tarixiy markaz, me’moriy obidalar, muzeylar va kechki shahar sayri.",
-
     time: "08:00–21:00",
   },
 
@@ -75,13 +65,9 @@ const provinces = [
     name: "Qashqadaryo",
     short: "Amir Temur vatani",
     days: "2 kun",
-
-    image: "images/qashqadaryo.jpg",
-
+    image: "qashqadaryo.jpg",
     places: ["Shahrisabz", "Oqsaroy", "Tarixiy markaz"],
-
     program: "Shahrisabz tarixiy obidalari va mahalliy madaniyat.",
-
     time: "08:00–20:00",
   },
 
@@ -89,14 +75,10 @@ const provinces = [
     name: "Surxondaryo",
     short: "Qadimgi sivilizatsiyalar beshigi",
     days: "2 kun",
-
-    image: "images/surxondaryo.jpg",
-
+    image: "surxondaryo.jpg",
     places: ["Termiz", "Qadimiy yodgorliklar", "Tabiat maskanlari"],
-
     program:
       "Qadimiy Termiz, tarixiy meros va janubiy O‘zbekiston atmosferasi.",
-
     time: "08:00–20:00",
   },
 
@@ -104,13 +86,9 @@ const provinces = [
     name: "Farg‘ona",
     short: "O‘zbekiston marvaridi",
     days: "1 kun",
-
-    image: "images/fargona.jpg",
-
+    image: "fargona.jpg",
     places: ["Farg‘ona shahri", "Marg‘ilon", "Rishton"],
-
     program: "Hunarmandchilik, kulolchilik va Farg‘ona vodiysi bo‘ylab sayr.",
-
     time: "09:00–20:00",
   },
 
@@ -118,13 +96,9 @@ const provinces = [
     name: "Andijon",
     short: "Bobur vatani",
     days: "1 kun",
-
-    image: "images/andijon.jpg",
-
+    image: "andijon.jpg",
     places: ["Andijon", "Bobur merosi", "Mahalliy bozorlar"],
-
     program: "Tarix, mahalliy madaniyat va gastronomik sayr.",
-
     time: "09:00–19:00",
   },
 
@@ -132,13 +106,9 @@ const provinces = [
     name: "Namangan",
     short: "Hunarmandchilik markazi",
     days: "1 kun",
-
-    image: "images/namangan.jpg",
-
+    image: "namangan.jpg",
     places: ["Namangan", "Mahalliy bog‘lar", "Hunarmandchilik"],
-
     program: "Shahar sayri, hunarmandchilik va mahalliy madaniyat.",
-
     time: "09:00–19:00",
   },
 
@@ -146,13 +116,9 @@ const provinces = [
     name: "Navoiy",
     short: "Sahro o‘rtasidagi sarob",
     days: "3 kun",
-
-    image: "images/navoiy.jpg",
-
+    image: "navoiy.jpg",
     places: ["Sarmishsoy", "Navoiy shahri", "Cho‘l manzaralari"],
-
     program: "Tabiat, tarixiy joylar va sahro manzaralari.",
-
     time: "08:00–20:00",
   },
 
@@ -160,13 +126,9 @@ const provinces = [
     name: "Xorazm",
     short: "Ming qal’a o‘lkasi",
     days: "3 kun",
-
-    image: "images/xorazm.jpg",
-
+    image: "xorazm.webp",
     places: ["Xiva", "Ichan-Qal’a", "Kunya-Ark", "Qadimiy minoralar"],
-
     program: "Ichan-Qal’a, qadimiy madrasalar, minoralar va kechki Xiva.",
-
     time: "08:00–21:00",
   },
 
@@ -174,9 +136,7 @@ const provinces = [
     name: "Buxoro",
     short: "Safarning katta finali",
     days: "5 kun",
-
-    image: "images/buxoro.jpg",
-
+    image: "buxoro.jpg",
     places: [
       "Poi-Kalon",
       "Ark qal’asi",
@@ -184,10 +144,8 @@ const provinces = [
       "Sitorai Mohi Xosa",
       "Eski shahar",
     ],
-
     program:
       "25 kunlik safarning finali. Tarixiy markaz, hunarmandchilik, gastronomiya va xayrlashuv kechasi.",
-
     time: "08:00–22:00",
   },
 ];
@@ -197,8 +155,8 @@ const provinces = [
 ========================================================= */
 
 const provinceGrid = document.getElementById("provinceGrid");
-
 const routeList = document.getElementById("routeList");
+const navbar = document.getElementById("navbar");
 
 /* =========================================================
    RENDER PROVINCES
@@ -214,15 +172,16 @@ function renderProvinces() {
 
     card.className = "province-card";
 
-    /*
-      MUHIM:
-      Rasmlar images/ papkasidan olinadi.
-    */
-
-    card.style.backgroundImage = `url("${province.image}")`;
+    card.style.backgroundImage = `
+      linear-gradient(
+        180deg,
+        rgba(0,0,0,.05),
+        rgba(0,0,0,.35)
+      ),
+      url("${province.image}")
+    `;
 
     card.innerHTML = `
-
       <div class="province-content">
 
         <div class="province-number">
@@ -242,7 +201,6 @@ function renderProvinces() {
         </div>
 
       </div>
-
     `;
 
     card.addEventListener("click", () => openDetail(index));
@@ -266,25 +224,18 @@ function renderRoute() {
     item.className = "route-item";
 
     item.innerHTML = `
-
       <div class="route-dot">
         ${String(index + 1).padStart(2, "0")}
       </div>
 
       <div>
-        <h3>
-          ${province.name}
-        </h3>
-
-        <p>
-          ${province.short}
-        </p>
+        <h3>${province.name}</h3>
+        <p>${province.short}</p>
       </div>
 
       <div class="route-days">
         ${province.days}
       </div>
-
     `;
 
     routeList.appendChild(item);
@@ -294,8 +245,6 @@ function renderRoute() {
 /* =========================================================
    NAVBAR
 ========================================================= */
-
-const navbar = document.getElementById("navbar");
 
 window.addEventListener("scroll", () => {
   if (!navbar) return;
@@ -314,6 +263,15 @@ function toggleMenu() {
 
   if (nav.style.display === "flex") {
     nav.style.display = "";
+    nav.style.position = "";
+    nav.style.top = "";
+    nav.style.left = "";
+    nav.style.right = "";
+    nav.style.padding = "";
+    nav.style.background = "";
+    nav.style.border = "";
+    nav.style.borderRadius = "";
+    nav.style.flexDirection = "";
 
     return;
   }
@@ -340,7 +298,6 @@ function openBooking() {
   if (!modal) return;
 
   modal.classList.add("active");
-
   document.body.classList.add("modal-open");
 
   updateTotal();
@@ -352,7 +309,6 @@ function closeBooking() {
   if (!modal) return;
 
   modal.classList.remove("active");
-
   document.body.classList.remove("modal-open");
 }
 
@@ -406,18 +362,13 @@ if (bookingForm) {
     event.preventDefault();
 
     const name = document.getElementById("name").value.trim();
-
     const phone = document.getElementById("phone").value.trim();
-
     const date = document.getElementById("date").value;
-
     const gender = document.getElementById("gender").value;
-
     const note = document.getElementById("note").value.trim();
 
     if (!name || !phone || !date || !gender) {
       alert("Iltimos, barcha majburiy maydonlarni to‘ldiring.");
-
       return;
     }
 
@@ -439,60 +390,62 @@ if (bookingForm) {
 
     if (bookingContent) {
       bookingContent.innerHTML = `
+        <div class="success">
 
-          <div class="success">
-
-            <div class="success-icon">
-              ✓
-            </div>
-
-            <h3>
-              Arizangiz qabul qilindi!
-            </h3>
-
-            <p>
-              ${name}, sizning dastlabki
-              ro‘yxatdan o‘tish arizangiz saqlandi.
-            </p>
-
-            <p>
-
-              Ishtirokchilar:
-              <b>${bookedPeople} kishi</b>
-
-              <br>
-
-              Jins:
-              <b>${gender}</b>
-
-              <br>
-
-              Safar sanasi:
-              <b>${date}</b>
-
-              <br>
-
-              Telefon:
-              <b>${phone}</b>
-
-              ${note ? `<br>Izoh: <b>${note}</b>` : ""}
-
-            </p>
-
-            <button
-              class="primary-btn"
-              style="margin-top:22px"
-              onclick="closeBooking()"
-            >
-              Yopish
-            </button>
-
+          <div class="success-icon">
+            ✓
           </div>
 
-        `;
+          <h3>
+            Arizangiz qabul qilindi!
+          </h3>
+
+          <p>
+            ${name}, sizning dastlabki
+            ro‘yxatdan o‘tish arizangiz saqlandi.
+          </p>
+
+          <p>
+            Ishtirokchilar:
+            <b>${bookedPeople} kishi</b>
+
+            <br>
+
+            Jins:
+            <b>${gender}</b>
+
+            <br>
+
+            Safar sanasi:
+            <b>${date}</b>
+
+            <br>
+
+            Telefon:
+            <b>${phone}</b>
+
+            ${note ? `<br>Izoh: <b>${note}</b>` : ""}
+          </p>
+
+          <button
+            class="primary-btn"
+            style="margin-top:22px"
+            onclick="closeBooking()"
+          >
+            Yopish
+          </button>
+
+        </div>
+      `;
     }
 
     people = 1;
+
+    const counter = document.getElementById("peopleCount");
+
+    if (counter) {
+      counter.textContent = "1";
+    }
   });
 }
 
@@ -501,17 +454,6 @@ if (bookingForm) {
 ========================================================= */
 
 function openTelegram() {
-  /*
-    KEYIN SHU YERGA REAL TELEGRAM USERNAME QO‘YASAN.
-
-    Masalan:
-
-    window.open(
-      "https://t.me/SENING_USERNAME",
-      "_blank"
-    );
-  */
-
   window.open("https://t.me/", "_blank");
 }
 
@@ -525,18 +467,21 @@ function openDetail(index) {
   if (!province) return;
 
   const modal = document.getElementById("detailModal");
-
   const content = document.getElementById("detailContent");
 
   if (!modal || !content) return;
 
   content.innerHTML = `
-
     <div
       class="detail-hero"
       style="
         background-image:
-        url('${province.image}')
+        linear-gradient(
+          180deg,
+          transparent,
+          rgba(0,0,0,.85)
+        ),
+        url('${province.image}');
       "
     >
 
@@ -554,7 +499,6 @@ function openDetail(index) {
 
     </div>
 
-
     <div style="margin-top:18px">
 
       <div class="eyebrow">
@@ -563,9 +507,7 @@ function openDetail(index) {
 
     </div>
 
-
     <div class="detail-grid">
-
 
       <div class="detail-card">
 
@@ -574,13 +516,12 @@ function openDetail(index) {
         </h4>
 
         <ul>
-
-          ${province.places.map((place) => `<li>${place}</li>`).join("")}
-
+          ${province.places
+            .map((place) => `<li>${place}</li>`)
+            .join("")}
         </ul>
 
       </div>
-
 
       <div class="detail-card">
 
@@ -593,14 +534,11 @@ function openDetail(index) {
         </p>
 
         <p style="margin-top:8px">
-
           Safar davomiyligi:
           <b>${province.days}</b>
-
         </p>
 
       </div>
-
 
       <div
         class="detail-card"
@@ -617,9 +555,7 @@ function openDetail(index) {
 
       </div>
 
-
     </div>
-
 
     <div style="margin-top:20px">
 
@@ -634,11 +570,9 @@ function openDetail(index) {
       </button>
 
     </div>
-
   `;
 
   modal.classList.add("active");
-
   document.body.classList.add("modal-open");
 }
 
@@ -652,7 +586,6 @@ function closeDetail() {
   if (!modal) return;
 
   modal.classList.remove("active");
-
   document.body.classList.remove("modal-open");
 }
 
@@ -692,9 +625,7 @@ if (dateInput) {
   tomorrow.setDate(tomorrow.getDate() + 1);
 
   const year = tomorrow.getFullYear();
-
   const month = String(tomorrow.getMonth() + 1).padStart(2, "0");
-
   const day = String(tomorrow.getDate()).padStart(2, "0");
 
   dateInput.min = `${year}-${month}-${day}`;
@@ -712,25 +643,9 @@ document.addEventListener("keydown", function (event) {
 });
 
 /* =========================================================
-   IMAGE ERROR CHECK
-========================================================= */
-
-document.addEventListener(
-  "error",
-  function (event) {
-    if (event.target && event.target.tagName === "IMG") {
-      console.warn("Rasm topilmadi:", event.target.src);
-    }
-  },
-  true
-);
-
-/* =========================================================
    START
 ========================================================= */
 
 renderProvinces();
-
 renderRoute();
-
 updateTotal();
